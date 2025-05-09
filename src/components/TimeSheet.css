@@ -1,0 +1,380 @@
+.timesheet {
+    padding: 20px;
+    max-width: 100vw;
+    margin: 0 auto;
+}
+
+.timesheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timesheet h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+}
+
+.copy-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+    background-color: #45a049;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.export-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.export-button:hover {
+    background-color: #218838;
+}
+
+.timesheet-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.timesheet-title h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.company-info {
+    margin: 15px 0;
+}
+
+.company-info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.company-info h3 {
+    font-size: 16px;
+    color: #444;
+}
+
+.period-info {
+    margin: 15px 0;
+}
+
+.period-info p {
+    margin: 10px 0;
+}
+
+.legend {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.timesheet-content {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.timesheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    min-width: max-content;
+}
+
+.timesheet-table th,
+.timesheet-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.timesheet-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.timesheet-table td input,
+.timesheet-table td select {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #4CAF50;
+    border-radius: 2px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.timesheet-table td {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.timesheet-table td:hover:not(.number-column) {
+    background-color: #f0f0f0;
+}
+
+.timesheet-table td.editing {
+    padding: 0;
+}
+
+.day-column {
+    width: 40px;
+    text-align: center;
+    padding: 2px !important;
+    height: 50px;
+    vertical-align: top;
+}
+
+.day-text,
+.day-hours {
+    padding: 2px;
+    min-height: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.day-text {
+    border-bottom: 1px dotted #ccc;
+    font-size: 12px;
+    min-height: 18px;
+}
+
+.day-hours {
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 18px;
+}
+
+.day-text:hover,
+.day-hours:hover {
+    background-color: #e8f5e9;
+}
+
+.day-text-input,
+.day-hours-input {
+    width: 100%;
+    padding: 2px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #4CAF50;
+    height: 18px;
+}
+
+.day-text-input {
+    border-bottom: 2px solid #4CAF50;
+    text-transform: uppercase;
+}
+
+.weekend .day-text,
+.weekend .day-hours {
+    background-color: #ffebee;
+}
+
+.weekend .day-text:hover,
+.weekend .day-hours:hover {
+    background-color: #ffcdd2;
+}
+
+.attendance-header {
+    background-color: #f5f5f5;
+    text-align: center;
+    font-weight: bold;
+}
+
+.weekend {
+    background-color: #ffebee;
+}
+
+.weekend.day-column {
+    background-color: #ffebee;
+}
+
+.number-column {
+    width: 50px;
+    text-align: center;
+}
+
+.name-position-column {
+    width: 200px;
+    text-align: center;
+    padding: 2px !important;
+    height: 50px;
+}
+
+.employee-name,
+.employee-position {
+    padding: 2px;
+    min-height: 20px;
+    cursor: pointer;
+}
+
+.employee-name {
+    border-bottom: 1px dotted #ccc;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0 !important;
+}
+
+.employee-position {
+    font-size: 12px;
+    color: #444;
+}
+
+.name-input,
+.position-input {
+    width: 100%;
+    padding: 2px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #4CAF50;
+}
+
+.name-input {
+    border-bottom: 2px solid #4CAF50;
+    font-weight: bold;
+}
+
+.employee-number-column {
+    width: 100px;
+    text-align: center;
+}
+
+.gender-column {
+    width: 50px;
+    text-align: center;
+}
+
+.additional-info {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.table-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.add-employee-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-employee-button:hover {
+    background-color: #45a049;
+}
+
+.total-hours-header {
+    background-color: #f5f5f5;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.hours-total,
+.hours-sub {
+    width: 80px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.hours-input {
+    width: 100%;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #4CAF50;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.hours-total {
+    background-color: #e3f2fd;
+    font-weight: bold;
+}
+
+.hours-sub {
+    background-color: #f5f5f5;
+}
